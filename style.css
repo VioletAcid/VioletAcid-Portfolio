@@ -1,0 +1,948 @@
+
+/* VIOLETACID — COMIC HORROR DESIGN SYSTEM */
+
+@import url('https://fonts.googleapis.com/css2?family=Creepster&family=Kalam:wght@400;700&family=Special+Elite&display=swap');
+
+:root {
+    --black: #0b0710;
+    --purple: #8e4bb0;
+    --purple-light: #c78bdf;
+    --paper: #f2dfba;
+    --blood: #8b1725;
+    --white: #fff2dc;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Kalam', cursive;
+}
+
+h1, h2, h3 {
+    font-family: 'Creepster', cursive;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* TOP NAVIGATION */
+
+.asylum-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 32px;
+    border-bottom: 2px solid var(--purple);
+}
+
+.asylum-logo {
+    font-family: 'Creepster', cursive;
+    font-size: 2rem;
+    color: var(--purple-light);
+}
+
+.asylum-links {
+    display: flex;
+    gap: 24px;
+}
+
+.asylum-links a {
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+}
+
+.asylum-links a:hover {
+    color: var(--purple-light);
+}
+
+/* HOMEPAGE */
+
+.asylum-entrance {
+    min-height: calc(100vh - 84px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 24px;
+    text-align: center;
+}
+
+.entrance-content {
+    max-width: 800px;
+}
+
+.entrance-content h1 {
+    font-size: clamp(4rem, 12vw, 9rem);
+    line-height: 1;
+    color: var(--white);
+    text-shadow: 5px 5px 0 var(--purple);
+}
+
+.entrance-subtitle {
+    font-size: 1.8rem;
+    color: var(--purple-light);
+    letter-spacing: 4px;
+}
+
+.entrance-quote {
+    font-size: 1.4rem;
+    margin: 32px 0;
+}
+
+/* TORN PAPER BUTTON — BASE STYLE */
+
+.enter-button {
+    background: var(--paper);
+    color: var(--black);
+    border: 3px solid var(--black);
+    padding: 16px 32px;
+    font-family: 'Kalam', cursive;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transform: rotate(-2deg);
+}
+
+.enter-button:hover {
+    transform: rotate(0deg);
+    background: var(--purple-light);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+    .asylum-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .asylum-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .entrance-content h1 {
+        font-size: clamp(3.5rem, 14vw, 6rem);
+    }
+}
+
+
+/* HOMEPAGE DETAILS */
+
+.facility-label {
+    font-family: 'Special Elite', monospace;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: var(--paper);
+    margin-bottom: 24px;
+}
+
+.enter-button {
+    display: inline-block;
+    text-decoration: none;
+    line-height: 1.4;
+}
+
+.enter-button:focus-visible,
+.asylum-links a:focus-visible {
+    outline: 3px solid var(--purple-light);
+    outline-offset: 5px;
+}
+
+
+/* COMIC-BOOK ASYLUM BACKGROUND */
+
+.asylum-entrance {
+    min-height: calc(100vh - 72px);
+    background-image: url("assets/images/asylum-bedroom.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    justify-content: flex-end;
+    text-align: left;
+    padding: 48px 8%;
+}
+
+.entrance-content {
+    width: min(100%, 650px);
+}
+
+@media (max-width: 768px) {
+    .asylum-entrance {
+        justify-content: center;
+        padding: 48px 24px;
+    }
+}
+
+
+/* COMIC-BOOK TEXT PANEL */
+
+.entrance-content {
+    width: min(100%, 650px);
+    background: rgba(11, 7, 16, 0.88);
+    border: 3px solid var(--black);
+    outline: 2px solid var(--purple);
+    padding: 32px;
+    position: relative;
+    z-index: 1;
+}
+
+.entrance-content h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    overflow-wrap: anywhere;
+}
+
+.entrance-quote {
+    color: var(--white);
+    text-shadow: 2px 2px 0 var(--black);
+}
+
+@media (max-width: 768px) {
+    .entrance-content {
+        padding: 24px;
+    }
+}
+
+
+/* PURPLE COMIC-BOOK ATMOSPHERE */
+
+.asylum-entrance {
+    position: relative;
+    isolation: isolate;
+}
+
+.asylum-entrance::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(104, 36, 153, 0.28);
+    mix-blend-mode: multiply;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* DISTRESSED COMIC-BOOK CAPTION */
+
+.entrance-content {
+    background: rgba(11, 7, 16, 0.94);
+    border: 4px solid var(--black);
+    outline: none;
+    clip-path: polygon(
+        0% 2%, 8% 0%, 19% 1%,
+        31% 0%, 44% 2%, 57% 0%,
+        71% 1%, 84% 0%, 100% 2%,
+        99% 24%, 100% 49%,
+        98% 74%, 100% 98%,
+        86% 100%, 72% 99%,
+        57% 100%, 41% 98%,
+        26% 100%, 12% 99%,
+        0% 100%, 1% 74%,
+        0% 48%, 1% 22%
+    );
+    padding: 40px;
+}
+
+@media (max-width: 768px) {
+    .entrance-content {
+        padding: 24px;
+    }
+}
+
+
+/* THE FORGOTTEN WARD — HALLWAY */
+
+.hallway-page {
+    min-height: 100vh;
+    background: #100b16;
+}
+
+.hallway-main {
+    min-height: calc(100vh - 72px);
+    padding: 64px 24px;
+    text-align: center;
+    background-color: #100b16;
+}
+
+.hallway-label {
+    color: var(--purple-light);
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 3px;
+}
+
+.hallway-main h1 {
+    color: var(--paper);
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-bottom: 48px;
+}
+
+.door-grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 16px;
+    max-width: 1300px;
+    margin: 0 auto;
+    align-items: end;
+}
+
+.asylum-door {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 380px;
+    padding: 20px 10px;
+    background: #3e254e;
+    border: 9px ridge #211329;
+    color: var(--paper);
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.asylum-door:hover,
+.asylum-door:focus-visible {
+    background: #68417b;
+    transform: translateY(-10px);
+    color: var(--white);
+}
+
+.door-sign {
+    background: var(--paper);
+    color: var(--black);
+    border: 3px solid var(--black);
+    padding: 10px 8px;
+    font-family: 'Kalam', cursive;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.2;
+    transform: rotate(-3deg);
+    width: 100%;
+}
+
+.door-number {
+    margin-top: 80px;
+    font-family: 'Special Elite', monospace;
+    font-size: 2rem;
+}
+
+.door-handle {
+    position: absolute;
+    top: 66%;
+    right: 12px;
+    width: 12px;
+    height: 25px;
+    background: var(--paper);
+    border: 3px solid var(--black);
+}
+
+.hallway-warning {
+    margin-top: 48px;
+    color: var(--blood);
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 1000px) {
+    .door-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .door-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .asylum-door {
+        min-height: 260px;
+    }
+
+    .door-number {
+        margin-top: 45px;
+    }
+}
+
+
+/* FIX — ENTER THE FACILITY BUTTON */
+
+.entrance-content .enter-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: auto;
+    min-width: 270px;
+    min-height: 64px;
+
+    padding: 14px 24px;
+    margin-top: 12px;
+
+    background-color: #f2dfba;
+    color: #0b0710;
+
+    border: 3px solid #0b0710;
+    font-family: 'Kalam', cursive;
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.3;
+    text-align: center;
+    text-decoration: none;
+
+    clip-path: none;
+    transform: rotate(-2deg);
+}
+
+.entrance-content .enter-button:hover {
+    background-color: #c78bdf;
+    color: #0b0710;
+    transform: rotate(0deg);
+}
+
+@media (max-width: 600px) {
+    .entrance-content .enter-button {
+        min-width: 0;
+        width: 100%;
+        font-size: 1rem;
+    }
+}
+
+
+/* STEP 12 — COMIC-BOOK ASYLUM DOORS */
+
+.hallway-main {
+    background-color: #140d1d;
+    border-top: 4px solid #08050b;
+}
+
+.door-grid {
+    gap: 20px;
+    perspective: 1000px;
+}
+
+.asylum-door {
+    min-height: 400px;
+    background: #4a2a5d;
+    border: 10px solid #110a18;
+    outline: 3px solid #8e4bb0;
+    box-shadow:
+        inset 8px 0 #24132e,
+        inset -8px 0 #24132e,
+        8px 8px 0 #08050b;
+    overflow: visible;
+    transition: transform 0.2s ease;
+}
+
+/* Recessed upper window */
+.asylum-door::before {
+    content: "";
+    position: absolute;
+    top: 110px;
+    left: 24%;
+    width: 52%;
+    height: 100px;
+    background:
+        repeating-linear-gradient(
+            90deg,
+            transparent 0 17px,
+            #0b0710 17px 22px
+        ),
+        #211329;
+    border: 7px solid #160c1d;
+    outline: 2px solid #8e4bb0;
+}
+
+/* Lower door panel */
+.asylum-door::after {
+    content: "";
+    position: absolute;
+    bottom: 24px;
+    left: 18%;
+    width: 64%;
+    height: 90px;
+    border: 7px solid #211329;
+    box-shadow: inset 0 0 0 3px #68417b;
+    pointer-events: none;
+}
+
+.door-sign {
+    position: relative;
+    z-index: 2;
+    background: #f2dfba;
+    border: 4px solid #0b0710;
+    box-shadow: 4px 5px 0 #0b0710;
+    transform: rotate(-3deg);
+}
+
+.door-number {
+    position: relative;
+    z-index: 2;
+    margin-top: 205px;
+    color: #f2dfba;
+    text-shadow: 2px 2px #0b0710;
+}
+
+.door-handle {
+    z-index: 3;
+    top: 66%;
+    right: 12px;
+    width: 12px;
+    height: 28px;
+    background: #f2dfba;
+    border: 3px solid #0b0710;
+}
+
+.asylum-door:hover,
+.asylum-door:focus-visible {
+    transform: translateY(-12px) rotate(-1deg);
+    background: #68417b;
+}
+
+@media (max-width: 600px) {
+    .asylum-door {
+        min-height: 300px;
+    }
+
+    .asylum-door::before {
+        top: 105px;
+        height: 65px;
+    }
+
+    .asylum-door::after {
+        height: 50px;
+    }
+
+    .door-number {
+        margin-top: 145px;
+    }
+}
+
+
+/* STEP 13 — ILLUSTRATED ASYLUM HALLWAY */
+
+.hallway-main {
+    position: relative;
+    isolation: isolate;
+
+    background-image:
+        linear-gradient(
+            rgba(11, 7, 16, 0.48),
+            rgba(11, 7, 16, 0.72)
+        ),
+        url("assets/images/asylum-hallway.png");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+}
+
+.hallway-main h1,
+.hallway-label,
+.hallway-warning {
+    position: relative;
+    z-index: 1;
+}
+
+.asylum-door {
+    background: rgba(74, 42, 93, 0.88);
+}
+
+.asylum-door:hover,
+.asylum-door:focus-visible {
+    background: rgba(142, 75, 176, 0.95);
+}
+
+
+/* STEP 14 — PATIENT FILE */
+
+
+.patient-page {
+    background: #100b16;
+}
+
+.patient-main {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.patient-intro {
+    color: #c78bdf;
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 3px;
+    text-align: center;
+}
+
+.patient-heading {
+    text-align: center;
+    color: #f2dfba;
+    font-size: clamp(3rem, 7vw, 6rem);
+    margin-bottom: 40px;
+}
+
+.patient-document {
+    position: relative;
+    background: #ead8b4;
+    color: #201624;
+    padding: 48px;
+    border: 5px solid #0b0710;
+    outline: 3px solid #8e4bb0;
+    box-shadow: 14px 14px 0 #08050b;
+    transform: rotate(-0.5deg);
+    font-family: 'Special Elite', monospace;
+}
+
+.patient-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    border-bottom: 3px solid #201624;
+    padding-bottom: 20px;
+}
+
+.confidential-stamp {
+    color: #8b1725;
+    border: 4px solid #8b1725;
+    padding: 8px 14px;
+    font-weight: bold;
+    transform: rotate(-8deg);
+}
+
+.patient-photo {
+    background: #c9b48e;
+    border: 5px solid #201624;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 6px 6px 0 #6e5c4e;
+}
+
+.photo-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    margin: 15px 0;
+    background: #37233f;
+    color: #c78bdf;
+    font-family: 'Creepster', cursive;
+    font-size: 8rem;
+}
+
+.patient-name {
+    font-family: 'Creepster', cursive;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    color: #4a2a5d;
+    margin-bottom: 25px;
+}
+
+.patient-document h3 {
+    font-family: 'Creepster', cursive;
+    color: #4a2a5d;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.patient-story {
+    line-height: 1.9;
+}
+
+.patient-divider {
+    border-top: 3px dashed #8b1725;
+    margin: 35px 0;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.skills-list span {
+    border: 3px solid #201624;
+    padding: 10px 15px;
+    background: #d1b9dc;
+    font-weight: bold;
+    transform: rotate(-2deg);
+}
+
+.skills-list span:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.patient-note {
+    color: #8b1725;
+    font-family: 'Kalam', cursive;
+    font-size: 1.5rem;
+    line-height: 1.6;
+}
+
+.patient-bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+    font-weight: bold;
+}
+
+.patient-bottom a {
+    color: #4a2a5d;
+    text-decoration: underline;
+}
+
+.patient-bottom a:hover {
+    color: #8b1725;
+}
+
+@media (max-width: 768px) {
+    .patient-document {
+        padding: 24px;
+        transform: none;
+    }
+
+    .patient-main {
+        padding-top: 35px;
+    }
+
+    .photo-placeholder {
+        height: 220px;
+    }
+}
+
+
+.photo-placeholder {
+    overflow: hidden;
+    padding: 0;
+}
+
+.photo-placeholder img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+}
+
+
+.projects-page {
+    background: #100b16;
+}
+
+.projects-main {
+    padding-top: 60px;
+    padding-bottom: 100px;
+}
+
+.projects-intro {
+    text-align: center;
+    color: #c78bdf;
+    font-family: 'Special Elite', monospace;
+    letter-spacing: 3px;
+}
+
+.projects-heading {
+    text-align: center;
+    color: #f2dfba;
+    font-size: clamp(3rem, 7vw, 6rem);
+}
+
+.projects-description {
+    max-width: 650px;
+    margin: 15px auto 55px;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #c9a8d6;
+}
+
+.experiment-card {
+    height: 100%;
+    background: #ead8b4;
+    color: #201624;
+    border: 5px solid #0b0710;
+    outline: 2px solid #8e4bb0;
+    padding: 24px;
+    box-shadow: 8px 8px 0 #08050b;
+    transform: rotate(-1deg);
+    transition: transform 0.2s ease;
+}
+
+.col-md-6:nth-child(even) .experiment-card {
+    transform: rotate(1deg);
+}
+
+.experiment-card:hover {
+    transform: rotate(0deg) translateY(-6px);
+}
+
+.experiment-card-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 10px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.75rem;
+}
+
+.experiment-status {
+    color: #8b1725;
+    border: 2px solid #8b1725;
+    padding: 5px;
+    text-align: center;
+    transform: rotate(-5deg);
+}
+
+.experiment-visual {
+    height: 180px;
+    background: #37233f;
+    border: 5px solid #201624;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+
+.experiment-visual span {
+    font-family: 'Creepster', cursive;
+    font-size: 6rem;
+    color: #c78bdf;
+}
+
+.experiment-card h2 {
+    font-family: 'Creepster', cursive;
+    color: #4a2a5d;
+    font-size: 2.2rem;
+}
+
+.experiment-card p {
+    font-family: 'Special Elite', monospace;
+    line-height: 1.7;
+    font-size: 0.95rem;
+}
+
+.experiment-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.experiment-tags span {
+    border: 2px solid #201624;
+    background: #d1b9dc;
+    padding: 5px 8px;
+    font-family: 'Special Elite', monospace;
+    font-size: 0.7rem;
+}
+
+.experiment-link {
+    display: inline-block;
+    margin-top: 25px;
+    background: #4a2a5d;
+    color: #fff2dc;
+    padding: 12px 16px;
+    border: 3px solid #201624;
+    font-family: 'Kalam', cursive;
+    font-weight: bold;
+}
+
+.experiment-link:hover {
+    background: #8b1725;
+    color: #fff2dc;
+}
+
+.projects-return {
+    display: inline-block;
+    margin-top: 60px;
+    color: #c78bdf;
+    font-family: 'Special Elite', monospace;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .projects-main {
+        padding-top: 35px;
+    }
+
+    .experiment-card {
+        transform: none;
+    }
+}
+
+
+.last-broadcast-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.experiment-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Portfolio ambience toggle */
+
+#asylum-sound-toggle {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1000;
+    padding: 12px 18px;
+    background: #24132e;
+    border: 2px solid #b77bce;
+    color: #f1d8f5;
+    font-family: 'Special Elite', monospace;
+    font-size: .8rem;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 #08050c;
+}
+
+#asylum-sound-toggle:hover {
+    background: #59306c;
+}
+
+/* Shared sound button — fixed bottom right */
+
+#asylum-sound-toggle {
+    position: fixed !important;
+    top: auto !important;
+    left: auto !important;
+    right: 20px !important;
+    bottom: 20px !important;
+
+    z-index: 99999 !important;
+    width: auto !important;
+    height: auto !important;
+    margin: 0 !important;
+    transform: none !important;
+
+    padding: 12px 18px;
+    background: #24132e;
+    border: 2px solid #b77bce;
+    color: #f1d8f5;
+    font-family: 'Special Elite', monospace;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 5px 5px 0 #08050c;
+}
+
+#asylum-sound-toggle:hover {
+    background: #59306c;
+}

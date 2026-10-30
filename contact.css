@@ -1,0 +1,330 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background:
+        radial-gradient(ellipse at top, #29172f, #0c0811 70%);
+    color: #ead6e9;
+    font-family: 'Special Elite', monospace;
+}
+
+.therapy-page {
+    max-width: 1450px;
+    margin: 0 auto;
+    padding: 30px 28px 65px;
+}
+
+.therapy-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.therapy-header p {
+    color: #bb8bca;
+    font-size: .78rem;
+    letter-spacing: 3px;
+}
+
+.therapy-header h1 {
+    margin: 8px 0;
+    font: clamp(4rem, 8vw, 7rem)/1 'Creepster', cursive;
+    color: #ebd4bc;
+    text-shadow: 5px 5px #552b61;
+}
+
+.therapy-header > span {
+    color: #c38eac;
+    font-size: .75rem;
+    letter-spacing: 2px;
+}
+
+/* Two-column composition */
+
+.therapy-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(340px, .85fr);
+    align-items: center;
+    gap: 34px;
+}
+
+/* Illustrated office */
+
+.office-panel {
+    min-width: 0;
+    border: 5px solid #110b17;
+    outline: 2px solid #865398;
+    background: #211629;
+    box-shadow: 10px 12px 0 #060409;
+}
+
+.office-heading,
+.office-caption {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 14px 18px;
+    background: #1a101f;
+    color: #b99ac4;
+    font-size: .7rem;
+    letter-spacing: 1px;
+}
+
+.office-heading {
+    border-bottom: 3px solid #100a16;
+}
+
+.office-caption {
+    border-top: 3px solid #100a16;
+}
+
+.recording {
+    color: #d18da9;
+}
+
+.office-art {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.window-patient {
+    opacity: .3;
+    animation: patient-fade 12s ease-in-out infinite;
+}
+
+.lamp-bulb {
+    animation: lamp-flicker 8s steps(1) infinite;
+}
+
+@keyframes patient-fade {
+    0%, 65%, 100% { opacity: 0; }
+    75%, 90% { opacity: .6; }
+}
+
+@keyframes lamp-flicker {
+    0%, 92%, 96%, 100% { opacity: 1; }
+    93%, 95% { opacity: .15; }
+    94% { opacity: .7; }
+}
+
+/* Contact clipboard */
+
+.clipboard-panel {
+    position: relative;
+    min-width: 0;
+    padding: 52px 35px 48px;
+    background:
+        repeating-linear-gradient(
+            0deg,
+            #e5d1b4 0 31px,
+            #d9c3a7 32px 33px
+        );
+    color: #342233;
+    border: 10px solid #392536;
+    box-shadow: 12px 13px 0 #07050b;
+    transform: rotate(1deg);
+}
+
+.clipboard-clip {
+    position: absolute;
+    width: 125px;
+    height: 32px;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #a38a9d;
+    border: 6px solid #231625;
+    border-radius: 7px;
+}
+
+.form-number {
+    color: #72556c;
+    font-size: .7rem;
+    letter-spacing: 1px;
+}
+
+.clipboard-panel h2 {
+    margin: 15px 0;
+    color: #63396e;
+    font: clamp(2.2rem, 3.4vw, 3.1rem)/1.1 'Creepster', cursive;
+}
+
+.handwritten {
+    margin: 18px 0 24px;
+    color: #3f2b40;
+    font: 1.3rem/1.6 'Kalam', cursive;
+}
+
+.form-divider {
+    height: 3px;
+    background: #a68a98;
+    margin: 20px 0;
+}
+
+.contact-record {
+    padding: 15px 0;
+    border-bottom: 2px dashed #a68a98;
+}
+
+.contact-record > span:first-child {
+    display: block;
+    color: #6a4863;
+    font-size: .77rem;
+    letter-spacing: 2px;
+}
+
+.contact-record p {
+    margin: 9px 0;
+    font: 1rem/1.5 'Kalam', cursive;
+}
+
+.contact-link {
+    display: inline-block;
+    color: #663676;
+    font-size: .92rem;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+    text-underline-offset: 4px;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+    color: #a047b5;
+}
+
+.pending-link {
+    color: #8a7183;
+    font-size: .8rem;
+}
+
+.signature {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+}
+
+.signature span {
+    font-size: .7rem;
+}
+
+.signature strong {
+    color: #713e83;
+    font: 1.8rem 'Kalam', cursive;
+}
+
+.classified-stamp {
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+    padding: 6px;
+    color: #a0607c;
+    border: 3px solid #a0607c;
+    font-size: .65rem;
+    letter-spacing: 2px;
+    transform: rotate(-10deg);
+    opacity: .7;
+}
+
+/* Footer */
+
+.therapy-footer {
+    text-align: center;
+    padding: 45px 0 0;
+}
+
+.therapy-footer p {
+    color: #c9a6d1;
+    font: 1.2rem 'Kalam', cursive;
+}
+
+.therapy-footer nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 25px;
+}
+
+.therapy-footer a {
+    display: inline-block;
+    padding: 14px 20px;
+    color: #ead1ee;
+    border: 2px solid #9a68af;
+    text-decoration: none;
+    font-size: .8rem;
+    letter-spacing: 1px;
+}
+
+.therapy-footer a:hover,
+.therapy-footer a:focus-visible {
+    background: #693d7c;
+}
+
+/* Responsive layout */
+
+@media (max-width: 950px) {
+    .therapy-layout {
+        grid-template-columns: 1fr;
+        max-width: 740px;
+        margin: auto;
+    }
+
+    .clipboard-panel {
+        transform: none;
+    }
+}
+
+@media (max-width: 550px) {
+    .therapy-page {
+        padding: 20px 14px 45px;
+    }
+
+    .therapy-header {
+        margin-bottom: 25px;
+    }
+
+    .therapy-layout {
+        gap: 30px;
+    }
+
+    .clipboard-panel {
+        padding: 45px 20px 48px;
+        border-width: 7px;
+    }
+
+    .handwritten {
+        font-size: 1.15rem;
+    }
+
+    .office-heading,
+    .office-caption {
+        font-size: .6rem;
+        padding: 10px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .window-patient,
+    .lamp-bulb {
+        animation: none;
+    }
+}
+
+
+body #asylum-sound-toggle {
+    position: fixed !important;
+    top: auto !important;
+    left: auto !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    transform: none !important;
+    margin: 0 !important;
+    z-index: 99999 !important;
+}

@@ -1,0 +1,364 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ward 13 | The Forgotten Ward</title>
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Kalam:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="ward13.css">
+  <script src="ward13.js" defer></script>
+</head>
+<body>
+<main class="game-shell">
+  <header class="game-header">
+    <div>
+      <span class="eyebrow">THE FORGOTTEN WARD / EXPERIMENT 013</span>
+      <h1>WARD 13</h1>
+    </div>
+    <p>Search the room. Read the evidence.<br>Break the lock before the ward wakes.</p>
+    <div class="clock">
+      <small>TIME LEFT</small>
+      <strong id="timer">03:00</strong>
+    </div>
+  </header>
+
+  <section class="scene-frame" aria-label="Illustrated hospital room with objects to investigate">
+    <svg class="room-art" viewBox="0 0 1200 650" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Dark comic-style hospital ward with a metal bed, a patient file on the wall, a medicine cabinet, and a chained exit">
+      <defs>
+        <linearGradient id="wall" x2="1" y2="1">
+          <stop stop-color="#37273e"/>
+          <stop offset=".52" stop-color="#1d1829"/>
+          <stop offset="1" stop-color="#4d2a4b"/>
+        </linearGradient>
+        <linearGradient id="glass" x2=".8" y2="1">
+          <stop stop-color="#aa75c9"/>
+          <stop offset=".5" stop-color="#50336b"/>
+          <stop offset="1" stop-color="#1a182e"/>
+        </linearGradient>
+        <linearGradient id="floor" x2="0" y2="1">
+          <stop stop-color="#302330"/>
+          <stop offset="1" stop-color="#110e19"/>
+        </linearGradient>
+        <radialGradient id="glow">
+          <stop stop-color="#b88cda" stop-opacity=".38"/>
+          <stop offset="1" stop-color="#b88cda" stop-opacity="0"/>
+        </radialGradient>
+        <pattern id="hatch" width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(40)">
+          <path d="M0 0V14" stroke="#100b17" stroke-width="3" opacity=".4"/>
+        </pattern>
+      </defs>
+
+      <rect width="1200" height="650" fill="url(#wall)"/>
+      <path d="M0 0H1200V475H0Z" fill="url(#hatch)" opacity=".28"/>
+      <path d="M0 460 1200 438 1200 650H0Z" fill="url(#floor)" stroke="#100b15" stroke-width="11"/>
+      <path d="M0 555 1200 525M0 615 1200 580M250 465 190 650M580 455 590 650M920 447 1010 650"
+            fill="none" stroke="#6d5064" stroke-width="4" opacity=".45"/>
+      <ellipse cx="555" cy="280" rx="500" ry="290" fill="url(#glow)"/>
+
+      <g fill="none" stroke="#0b0a13" stroke-linecap="round" stroke-width="5" opacity=".9">
+        <path d="M58 0 75 70 61 95 91 138 77 189"/>
+        <path d="M75 70 108 83 121 112"/>
+        <path d="M470 0 461 62 487 97 466 143 495 164"/>
+        <path d="M765 0 749 76 771 101 757 140"/>
+        <path d="M1170 0 1151 54 1177 93 1155 127"/>
+      </g>
+      <g stroke="#a16a94" stroke-width="2" opacity=".24">
+        <path d="M17 35 55 57 35 105M440 178 478 220 465 257M810 350 780 388 805 420M1000 12 1035 40 1020 68"/>
+      </g>
+
+      <g stroke="#0c0b16" stroke-width="13">
+        <path d="M380 78H630V342H380Z" fill="url(#glass)"/>
+        <path d="M505 78V342M380 205H630"/>
+        <path d="M398 100 420 142 411 188M610 88 581 131 603 176"
+              fill="none" stroke-width="6"/>
+      </g>
+
+<g id="window-ghost" class="window-ghost">
+
+  <!-- Shadowy shoulders and torso -->
+  <path d="M444 342
+           L449 292
+           Q452 268 473 259
+           L485 253
+           L526 253
+           Q550 264 555 292
+           L563 342Z"
+        fill="#090711"
+        stroke="#050409"
+        stroke-width="6"/>
+
+  <!-- Long, thin arms -->
+  <path d="M458 282
+           Q445 302 445 342
+           M548 282
+           Q561 307 560 342"
+        fill="none"
+        stroke="#090711"
+        stroke-width="17"
+        stroke-linecap="round"/>
+
+  <!-- Neck -->
+  <path d="M491 246H519V273H491Z"
+        fill="#090711"/>
+
+  <!-- Head -->
+  <path d="M471 193
+           Q477 163 506 163
+           Q535 164 540 194
+           L536 229
+           Q528 253 506 259
+           Q483 252 475 230Z"
+        fill="#100b17"
+        stroke="#050409"
+        stroke-width="5"/>
+
+  <!-- Uneven, messy hair -->
+  <path d="M469 211
+           L462 185
+           L473 170
+           L479 153
+           L492 162
+           L504 148
+           L516 160
+           L530 151
+           L543 174
+           L541 207
+           L531 191
+           L520 185
+           L508 195
+           L493 181
+           L481 200Z"
+        fill="#050409"/>
+
+  <!-- Glowing eyes -->
+  <ellipse cx="492" cy="216" rx="6" ry="3"
+           fill="#e5b0ff"/>
+  <ellipse cx="520" cy="216" rx="6" ry="3"
+           fill="#e5b0ff"/>
+
+  <!-- Disturbing smile -->
+  <path d="M493 237 Q506 244 520 235"
+        fill="none"
+        stroke="#684075"
+        stroke-width="2"/>
+
+</g>
+
+      <path d="M390 340 360 369H655L631 340" fill="#241728" stroke="#0b0911" stroke-width="8"/>
+      <path d="M382 80Q357 185 365 342M627 79Q655 197 645 344"
+            fill="none" stroke="#6c4268" stroke-width="29" opacity=".65"/>
+
+      <g transform="translate(100 90) rotate(-5)">
+        <path d="M0 0H184V232H0Z" fill="#c7b098" stroke="#160e17" stroke-width="11"/>
+        <path d="M16 19H167M16 46H167M16 190H166M16 207H115"
+              stroke="#5b3448" stroke-width="5"/>
+        <path d="M36 65H143V167H36Z" fill="#514355" stroke="#241421" stroke-width="6"/>
+        <path d="M60 98Q86 56 114 99V140H60Z" fill="#241a2b"/>
+        <circle cx="87" cy="103" r="22" fill="#8b7283"/>
+        <path d="M64 103H110M76 115H100" stroke="#241421" stroke-width="6"/>
+        <text x="21" y="34" font-size="17" fill="#3b1d29" font-family="monospace">PATIENT 013</text>
+      </g>
+
+      <g stroke="#100d17" stroke-width="11" stroke-linejoin="round">
+        <path d="M52 356V528M58 361Q105 324 179 351L468 346Q526 348 533 379V533"
+              fill="none" stroke="#8c7884" stroke-width="15"/>
+        <path d="M74 407 520 393 668 490 170 524Z" fill="#665163"/>
+        <path d="M93 411 512 398 639 481 177 509Z" fill="#8d7789" stroke-width="8"/>
+        <path d="M98 420 206 415 255 460 150 470Z" fill="#b6a6ae" stroke-width="6"/>
+        <path d="M244 426 508 414 618 480 288 493Z" fill="#4c2d55" stroke-width="7"/>
+        <path d="M160 513 151 569M658 488 650 558" stroke="#8c7884" stroke-width="16"/>
+      </g>
+      <path d="M273 434 352 464 320 478 239 446M380 424 465 455"
+            fill="none" stroke="#bb8ebc" stroke-width="4" opacity=".55"/>
+
+      <g transform="translate(167 384)" stroke="#1d1420" stroke-width="5" fill="#967785">
+        <ellipse cx="-10" cy="-29" rx="10" ry="27" transform="rotate(-18 -10 -29)"/>
+        <ellipse cx="17" cy="-31" rx="10" ry="27" transform="rotate(18 17 -31)"/>
+        <circle cy="0" r="23"/>
+        <ellipse cy="34" rx="26" ry="24"/>
+        <circle cx="-9" cy="-3" r="3" fill="#170d19"/>
+        <circle cx="9" cy="-3" r="3" fill="#170d19"/>
+      </g>
+
+      <g stroke="#110c16" stroke-width="9">
+        <path d="M683 370 855 358 887 394 692 409Z" fill="#745365"/>
+        <path d="M705 403V532M866 390V523" fill="none" stroke="#513846" stroke-width="18"/>
+        <path d="M726 410H847V474H726Z" fill="#4a3042"/>
+        <path d="M733 448H841"/>
+        <path d="M774 433H799" stroke="#c8a3ad" stroke-width="5"/>
+      </g>
+      <path d="M770 351 784 291 815 270" stroke="#1a1420" stroke-width="10" fill="none"/>
+      <path d="M786 271Q816 246 841 270L813 294Z" fill="#d7ac8e" stroke="#1a1420" stroke-width="8"/>
+      <ellipse cx="805" cy="338" rx="83" ry="61" fill="url(#glow)"/>
+
+      <g stroke="#130d17" stroke-width="10">
+        <path d="M895 148 1044 141 1053 505 890 508Z" fill="#5a4555"/>
+        <path d="M912 176 1029 172 1032 321 910 328Z" fill="#3b293b"/>
+        <path d="M912 337 1034 332 1036 484 906 488Z" fill="#493244"/>
+        <path d="M1014 251V283M1018 398V428" stroke="#b5a1a5" stroke-width="8"/>
+      </g>
+      <g fill="#ab899b" opacity=".7">
+        <rect x="925" y="195" width="24" height="56" rx="5"/>
+        <rect x="957" y="205" width="23" height="45" rx="5"/>
+        <rect x="983" y="191" width="28" height="60" rx="5"/>
+      </g>
+
+      <g stroke="#100b14" stroke-width="12">
+        <path d="M1080 114H1191V527H1080Z" fill="#342133"/>
+        <path d="M1098 148H1177V490H1098Z" fill="#513047"/>
+        <path d="M1117 201H1159V272H1117Z" fill="#1b1c28" stroke-width="7"/>
+      </g>
+    <path d="M1082 328 1193 410M1191 322 1083 412"
+      stroke="#ad8e88" stroke-width="9" fill="none"/>
+     
+ <circle cx="1136" cy="368" r="20" fill="#a47b5e"
+        stroke="#170e16" stroke-width="9"/>
+<rect x="1120" y="367" width="33" height="34" rx="6"
+      fill="#a47b5e" stroke="#170e16" stroke-width="7"/>
+      <path d="M1088 89H1189V122H1088Z" fill="#d3b69b" stroke="#160d16" stroke-width="7"/>
+      <text x="1110" y="113" font-size="26" fill="#281822"
+            font-family="monospace" font-weight="bold">EXIT</text>
+
+      <path d="M0 637 140 624 230 643 340 628 480 650H0ZM780 650 960 626 1070 641 1200 618V650Z"
+            fill="#0a0911" opacity=".9"/>
+      <path d="M0 0H1200V650H0Z" fill="none" stroke="#0b0810" stroke-width="20"/>
+    </svg>
+
+<div class="subject013" id="subject013" aria-hidden="true">
+  <svg viewBox="0 0 100 180" xmlns="http://www.w3.org/2000/svg">
+    <ellipse cx="50" cy="172" rx="31" ry="6" fill="#08050c" opacity=".55"/>
+
+   .subject013.walking .leg-left {
+    animation: left-step .45s ease-in-out infinite alternate;
+}
+
+.subject013.walking .leg-right {
+    animation: right-step .45s ease-in-out infinite alternate;
+}
+
+    <path d="M29 161L19 171L44 171L44 162Z"
+          fill="#221923" stroke="#100b15" stroke-width="4"/>
+    <path d="M57 162L57 171L82 171L72 161Z"
+          fill="#221923" stroke="#100b15" stroke-width="4"/>
+
+    <path d="M34 67L19 80L25 132L75 132L81 80L66 67Z"
+          fill="#b9a8a8" stroke="#1a101e" stroke-width="5"/>
+
+    <path d="M34 69L50 87L66 69M28 112L70 116"
+          fill="none" stroke="#6e586b" stroke-width="3"/>
+
+    <path d="M19 82L10 120L19 125L31 94"
+          fill="#aa929e" stroke="#1a101e" stroke-width="4"/>
+    <path d="M81 82L90 120L81 125L69 94"
+          fill="#aa929e" stroke="#1a101e" stroke-width="4"/>
+
+    <path d="M29 32Q20 4 48 5Q79 2 76 39L82 86L66 72L28 73L17 90Z"
+          fill="#17111e" stroke="#0a0810" stroke-width="5"/>
+
+    <ellipse cx="50" cy="45" rx="24" ry="30"
+             fill="#c3a1a2" stroke="#1a101e" stroke-width="4"/>
+
+    <path d="M26 38Q29 8 51 13Q72 12 75 37L59 26L48 36L38 26Z"
+          fill="#17111e"/>
+
+    <path d="M29 42L43 43M57 43L71 42"
+          stroke="#211322" stroke-width="4"/>
+    <circle cx="38" cy="45" r="2.5" fill="#100c15"/>
+    <circle cx="62" cy="45" r="2.5" fill="#100c15"/>
+
+    <path d="M45 61Q50 64 55 61"
+          fill="none" stroke="#713d52" stroke-width="3"/>
+
+    <path d="M70 24Q78 47 74 76"
+          fill="none" stroke="#9b558e" stroke-width="6"/>
+
+    <path d="M33 87L67 91"
+          stroke="#765a6b" stroke-width="2" stroke-dasharray="4 5"/>
+
+    <rect x="40" y="100" width="25" height="14"
+          fill="#d2b7a5" stroke="#241522" stroke-width="2"/>
+    <text x="43" y="110" font-size="9" fill="#4e263a"
+          font-family="monospace">013</text>
+  </svg>
+</div>
+
+<div class="subject-dialogue" id="subject-dialogue"
+     role="status" aria-live="polite" hidden>
+</div>
+
+    <button class="hotspot file-spot" data-inspect="file" aria-label="Inspect patient file">
+      <span>INSPECT FILE</span>
+    </button>
+    <button class="hotspot bed-spot" data-inspect="bed" aria-label="Search the hospital bed">
+      <span>SEARCH BED</span>
+    </button>
+    <button class="hotspot cabinet-spot" data-inspect="cabinet" aria-label="Search medicine cabinet">
+      <span>OPEN CABINET</span>
+    </button>
+    <button class="hotspot door-spot" data-inspect="door" aria-label="Inspect locked exit">
+      <span>EXIT</span>
+    </button>
+  </section>
+
+<div class="character-controls">
+  <div class="character-instructions">
+    <strong>SUBJECT 013</strong>
+    <span>Move: A / D or ← / →</span>
+    <span>Investigate: E</span>
+  </div>
+
+  <div class="character-buttons">
+    <button id="move-left" type="button" aria-label="Move left">◀</button>
+    <button id="interact" type="button">INVESTIGATE</button>
+    <button id="move-right" type="button" aria-label="Move right">▶</button>
+  </div>
+</div>
+
+  <section class="bottom-panel">
+    <div class="inventory">
+      <h2>COLLECTED EVIDENCE <span id="count">0 / 3</span></h2>
+      <div class="inventory-slots" id="inventory">
+        <span>?</span><span>?</span><span>?</span>
+      </div>
+    </div>
+    <div class="status">
+      <p id="status" role="status" aria-live="polite">
+        The exit is chained. Search the room for the code.
+      </p>
+      <button id="restart" type="button">RESTART EXPERIMENT</button>
+      <a href="hallway.html">← RETURN TO HALLWAY</a>
+    </div>
+  </section>
+</main>
+
+<div class="modal" id="modal" hidden>
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="close" id="close" aria-label="Close inspection">×</button>
+    <span class="eyebrow">EVIDENCE / WARD 013</span>
+    <h2 id="modal-title"></h2>
+    <p id="modal-text"></p>
+
+    <div id="code-entry" hidden>
+      <label for="code">FOUR-DIGIT EXIT CODE</label>
+      <input id="code" type="text" inputmode="numeric"
+             pattern="[0-9]*" maxlength="4" autocomplete="off"
+             placeholder="_ _ _ _">
+      <button id="unlock" type="button">UNLOCK DOOR</button>
+    </div>
+
+    <button id="collect" type="button">TAKE EVIDENCE</button>
+  </div>
+</div>
+
+<div class="ending" id="ending" hidden>
+  <div>
+    <h2 id="ending-title"></h2>
+    <p id="ending-text"></p>
+    <button id="play-again">TRY AGAIN</button>
+    <a href="hallway.html">LEAVE THE WARD</a>
+  </div>
+</div>
+<script src="ward13-audio.js"></script>
+</body>
+</html>

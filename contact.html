@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Therapy Room | VioletAcid</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Creepster&family=Kalam:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="contact.css">
+</head>
+
+<body>
+  <main class="therapy-page">
+
+    <header class="therapy-header">
+      <p>THE FORGOTTEN WARD / ROOM 005</p>
+      <h1>THERAPY ROOM</h1>
+      <span>SESSION STATUS: UNATTENDED</span>
+    </header>
+
+    <div class="therapy-layout">
+
+      <section class="office-panel" aria-label="Abandoned psychiatrist's office">
+        <div class="office-heading">
+          <span>CAMERA 005</span>
+          <span class="recording">● SIGNAL ACTIVE</span>
+        </div>
+
+        <svg class="office-art" viewBox="0 0 720 620"
+             role="img"
+             aria-label="Comic-book illustration of an abandoned psychiatric office with a desk, chair, window and mysterious silhouette">
+
+          <defs>
+            <linearGradient id="office-wall" x2="1" y2="1">
+              <stop stop-color="#513753"/>
+              <stop offset="1" stop-color="#211629"/>
+            </linearGradient>
+
+            <linearGradient id="office-window" x2="0" y2="1">
+              <stop stop-color="#8b64a5"/>
+              <stop offset="1" stop-color="#211a38"/>
+            </linearGradient>
+
+            <radialGradient id="office-light">
+              <stop stop-color="#d5a9dc" stop-opacity=".38"/>
+              <stop offset="1" stop-color="#d5a9dc" stop-opacity="0"/>
+            </radialGradient>
+
+            <pattern id="office-lines" width="12" height="12"
+                     patternUnits="userSpaceOnUse">
+              <path d="M0 12L12 0" stroke="#120b17"
+                    stroke-width="2" opacity=".23"/>
+            </pattern>
+          </defs>
+
+          <!-- Room -->
+          <rect width="720" height="620" fill="url(#office-wall)"/>
+          <rect width="720" height="620" fill="url(#office-lines)"/>
+
+          <ellipse cx="365" cy="190" rx="300" ry="270"
+                   fill="url(#office-light)"/>
+
+          <path d="M0 425L720 407V620H0Z"
+                fill="#281b2d" stroke="#110b16" stroke-width="10"/>
+
+          <path d="M0 490L720 470M0 565L720 535M180 430L95 620M480 418L550 620"
+                fill="none" stroke="#75536b"
+                stroke-width="4" opacity=".45"/>
+
+          <!-- Wall cracks -->
+          <g fill="none" stroke="#130d19"
+             stroke-width="6" stroke-linecap="round">
+            <path d="M70 0L85 75L64 112L96 160"/>
+            <path d="M85 75L115 88L123 120"/>
+            <path d="M610 0L594 54L623 86L603 127"/>
+            <path d="M350 0L336 50L356 79"/>
+          </g>
+
+          <!-- Window -->
+          <rect x="385" y="90" width="225" height="255"
+                fill="url(#office-window)"
+                stroke="#100b17" stroke-width="15"/>
+
+          <path d="M498 90V345M385 216H610"
+                stroke="#100b17" stroke-width="13"/>
+
+          <path d="M400 106L425 155L415 184M594 102L570 150L588 190"
+                fill="none" stroke="#1a1023" stroke-width="5"/>
+
+          <!-- Shadow beyond window -->
+          <g class="window-patient">
+            <path d="M465 338V287Q467 253 495 244
+                     Q523 253 528 287V338Z"
+                  fill="#100b1b"/>
+            <ellipse cx="497" cy="214" rx="27" ry="36"
+                     fill="#100b1b"/>
+            <path d="M469 214L473 178L492 187L506 172L524 191L527 216"
+                  fill="#100b1b"/>
+            <ellipse cx="487" cy="214" rx="4" ry="3" fill="#d6a5ec"/>
+            <ellipse cx="508" cy="214" rx="4" ry="3" fill="#d6a5ec"/>
+          </g>
+
+          <!-- Doctor's certificate -->
+          <g transform="rotate(-6 175 145)">
+            <rect x="92" y="78" width="175" height="130"
+                  fill="#c7b19e" stroke="#160e1b" stroke-width="11"/>
+            <text x="116" y="110" font-size="17"
+                  fill="#382336" font-family="monospace">DR. UNKNOWN</text>
+            <path d="M116 125H242M116 139H235M116 153H216"
+                  stroke="#694b5e" stroke-width="4"/>
+            <circle cx="183" cy="179" r="14"
+                    fill="none" stroke="#794d70" stroke-width="4"/>
+          </g>
+
+          <!-- Ceiling light -->
+          <path d="M315 0V65" stroke="#120c16" stroke-width="8"/>
+          <path d="M253 66H378L358 101H275Z"
+                fill="#c7a7c6" stroke="#130c18" stroke-width="9"/>
+          <path d="M275 99H356" stroke="#edc5e6" stroke-width="7"
+                class="lamp-bulb"/>
+
+          <!-- Visitor chair -->
+          <g stroke="#120c17" stroke-width="9">
+            <path d="M65 305Q70 265 115 265H170
+                     Q206 267 208 305V445H65Z"
+                  fill="#67435e"/>
+            <path d="M49 416L221 405L231 451L54 466Z"
+                  fill="#92647c"/>
+            <path d="M77 463V550M207 455V544"
+                  fill="none" stroke="#241626" stroke-width="18"/>
+          </g>
+
+          <!-- Desk -->
+          <g stroke="#100b16" stroke-width="10">
+            <path d="M245 370L590 355L650 409L277 431Z"
+                  fill="#896077"/>
+            <path d="M279 429L642 409V490L282 510Z"
+                  fill="#523345"/>
+            <path d="M305 500V588M610 489V574"
+                  stroke="#2c1a2a" stroke-width="22"/>
+            <path d="M425 447H535V480H425Z"
+                  fill="#694458" stroke-width="6"/>
+            <path d="M458 461H498"
+                  stroke="#c49bab" stroke-width="5"/>
+          </g>
+
+          <!-- Paper on desk -->
+          <g transform="rotate(-9 383 375)">
+            <path d="M325 340H436V404H325Z"
+                  fill="#dfc6a9" stroke="#241421" stroke-width="6"/>
+            <path d="M341 358H417M341 371H408M341 384H421"
+                  stroke="#916d81" stroke-width="3"/>
+          </g>
+
+          <!-- Desk lamp -->
+          <path d="M551 360L564 286L590 258"
+                fill="none" stroke="#1b1220" stroke-width="9"/>
+          <path d="M563 256Q588 230 613 255L587 280Z"
+                fill="#c4a0a8" stroke="#170e1c" stroke-width="7"/>
+
+          <!-- Forgotten coffee cup -->
+          <path d="M474 351H512L508 381H478Z"
+                fill="#b8a1a8" stroke="#211522" stroke-width="5"/>
+          <path d="M510 357Q532 355 527 369Q522 380 509 371"
+                fill="none" stroke="#211522" stroke-width="5"/>
+
+          <!-- Floor shadows -->
+          <path d="M0 608L140 591L225 620H0ZM450 620L610 594L720 610V620Z"
+                fill="#0b0810" opacity=".8"/>
+        </svg>
+
+        <div class="office-caption">
+          <span>NO APPOINTMENTS AVAILABLE</span>
+          <span>LAST SESSION: UNKNOWN</span>
+        </div>
+      </section>
+
+      <section class="clipboard-panel" aria-labelledby="contact-title">
+        <div class="clipboard-clip"></div>
+
+        <p class="form-number">PATIENT COMMUNICATION FORM / 005</p>
+        <h2 id="contact-title">LEAVE YOUR MESSAGE</h2>
+
+        <p class="handwritten">
+          The doctor is unavailable.<br>
+          Leave your message.<br>
+          Someone is always listening.
+        </p>
+
+        <div class="form-divider"></div>
+
+        <div class="contact-record">
+          <span>01 / EMAIL</span>
+          <p>For collaborations, opportunities and enquiries.</p>
+          <a class="contact-link" href="mailto:tiffanybritz6@gmail.com">
+            tiffanybritz6@gmail.com
+          </a>
+        </div>
+
+        <div class="contact-record">
+  <span>02 / GAME DEVELOPMENT</span>
+  <p>Interested in my horror games and creative projects?</p>
+  <a class="contact-link" href="projects.html">
+    VIEW EXPERIMENT RECORDS ↗
+  </a>
+</div>
+
+        
+<div class="contact-record">
+  <span>03 / INSTAGRAM — CREATIVEAC1D</span>
+  <p>My artwork, illustrations and creative experiments.</p>
+  <a class="contact-link"
+     href="https://www.instagram.com/creativeac1d/"
+     target="_blank"
+     rel="noopener noreferrer">
+    VISIT MY ART PAGE ↗
+  </a>
+</div>
+
+
+        <div class="signature">
+          <span>FILE SIGNED:</span>
+          <strong>VioletAcid</strong>
+        </div>
+
+        <div class="classified-stamp">CONFIDENTIAL</div>
+      </section>
+
+    </div>
+
+    <footer class="therapy-footer">
+      <p>"Not every patient leaves. Not every message is answered."</p>
+      <nav aria-label="Page navigation">
+        <a href="hallway.html">← RETURN TO HALLWAY</a>
+        <a href="index.html">RECEPTION / HOME</a>
+      </nav>
+    </footer>
+
+  </main>
+  <script src="asylum-audio.js"></script>
+</body>
+</html>
