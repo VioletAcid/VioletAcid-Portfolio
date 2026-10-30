@@ -946,3 +946,7 @@ button {
 #asylum-sound-toggle:hover {
     background: #59306c;
 }
+
+.col-md-6:nth-child(even) .experiment-card:hover {
+    transform: rotate(0deg) translateY(-6px);
+}

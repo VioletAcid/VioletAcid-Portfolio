@@ -204,10 +204,27 @@ window.Ward13Sounds?.escape();
 
     saySomething("I'm getting out of here.");
 
-    setTimeout(() => {
-        subject.classList.add('escaping');
-        subject.classList.add('walking');
-    }, 1000);
+   
+
+setTimeout(() => {
+    
+    subject.classList.remove('facing-left');
+    subject.style.transition = 'none';
+    subject.style.opacity = '1';
+
+
+    subject.offsetHeight;
+
+    
+    subject.style.transition =
+        'left 2.5s ease-in-out, opacity 0.6s ease-in 2.1s';
+
+    subject.classList.add('escaping');
+    subject.style.left = '94%';
+    subject.style.opacity = '0';
+}, 1000);
+
+
 
     setTimeout(() => {
         endGame(true);
@@ -268,11 +285,11 @@ let movementFrame = null;
 let lastMovementTime = 0;
 let dialogueTimeout;
 
+
 const investigationPoints = [
     { id: 'file', x: 16, range: 12 },
     { id: 'bed', x: 31, range: 22 },
-    { id: 'cabinet', x: 80, range: 12 },
-    { id: 'door', x: 94, range: 10 }
+    { id: 'cabinet', x: 80, range: 12 }
 ];
 
 function updateSubject() {
